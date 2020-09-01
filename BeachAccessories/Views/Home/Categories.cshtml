@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>@ViewBag.Category</h2>
+
+    <div>
+        @foreach (var p in ViewBag.Products)
+        {
+        
+            <p><a href="~/Home/Description/@p.Id/@ViewBag.Category">@p.Name</a></p>
+            <p><a href="~/Home/Buy/@p.Id/@ViewBag.Category">@p.Price</a></p>
+        }
+
+    </div>

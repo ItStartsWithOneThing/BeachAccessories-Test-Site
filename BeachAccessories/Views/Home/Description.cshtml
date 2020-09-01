@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>Images Of Product</p>
+<p>@ViewBag.Product.Name</p>
+<p>@ViewBag.Product.Price</p>
+<p>@ViewBag.Product.Color</p>
+<p>Добавить к моделям характеристики</p>
+<form method="get" action="~/Home/buy">
+    <input type="hidden" name="Id" value="@ViewBag.Product.Id" />
+    <input type="hidden" name="Name" value="@ViewBag.Category" />
+    <input type="submit" value="Купить" />
+</form>
