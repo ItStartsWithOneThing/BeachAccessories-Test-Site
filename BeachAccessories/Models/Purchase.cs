@@ -14,8 +14,11 @@ namespace BeachAccessories.Models
         public decimal? ProductPrice { get; set; }
         public DateTime Date { get; set; }
         public string ProductName { get; set; }
-        public string PersonName { get; set; }
+        public string PersonFirstName { get; set; }
+        public string PersonLastName { get; set; }
         public string EmailAdress { get; set; }
         public string PhoneNumber { get; set; }
+        public int? NewPostNumber { get; set; }
+        public string Comment { get; set; }
     }
 }

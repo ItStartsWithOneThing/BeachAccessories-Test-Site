@@ -4,40 +4,46 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="~/Content/StyleLayout.css" rel="stylesheet" type="text/css"/>
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="Content/StyleLayout.css" rel="stylesheet" type="text/css" />
+    <link href="Content/StyleIndext.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <style>
+    </style>
 </head>
 <body>
-    <nav role="navigation">
-        <ul>
-            <li><a href="~/Home/Index">Главная</a></li>
-            <li>
-                <a href="#">Категории</a>
-                <ul class="dropdown">
-                    <li><a href="~/Home/Categories/Towels">Полотенца</a></li>
-                    <li><a href="~/Home/Categories/Hats">Шляпы</a></li>
-                    <li><a href="~/Home/Categories/Umbrellas">Зонты</a></li>
-                    <li><a href="~/Home/Categories/Mats">Коврики</a></li>
-                    <li><a href="~/Home/Categories/Mattresses">Матрасы</a></li>
-                    <li><a href="~/Home/Categories/Rings">Круги</a></li>
+    <div class="upper-body">
+        <div class="all-content">
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="~/Home/Index"><span></span><span></span><span>Главная</span></a></li>
+                    <li>
+                        <a href="#"><span></span><span></span><span>Категории</span></a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="~/Home/Categories/Towels"><span></span><span></span><span>Полотенца</span></a></li>
+                                <li><a href="~/Home/Categories/Hats"><span></span><span></span><span>Шляпы</span></a></li>
+                                <li><a href="~/Home/Categories/Umbrellas"><span></span><span></span><span>Зонты</span></a></li>
+                                <li><a href="~/Home/Categories/Mats"><span></span><span></span><span>Коврики</span></a></li>
+                                <li><a href="~/Home/Categories/Mattresses"><span></span><span></span><span>Матрасы</span></a></li>
+                                <li><a href="~/Home/Categories/Rings"><span></span><span></span><span>Круги</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="~/Home/About"><span></span><span></span><span>О Нас</span></a></li>
+                    <li><a href="~/Home/Contact"><span></span><span></span><span>Контакты</span></a></li>
                 </ul>
-            </li>
-            <li><a href="~/Home/About">О Магазине</a></li>
-            <li><a href="~/Home/Contact">Контакты</a></li>
-        </ul>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Not creative company</p>
-        </footer>
+                <ul class="search">
+                    <li><input type="text" name="search" /></li>
+                    <li><input type="submit" value="Поиск" /></li>
+                </ul>
+            </nav>
+            @RenderBody()
+        </div>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <div class="empty-left"></div>
+    <div class="empty-right"></div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Not creative company</p>
+    </footer>
 </body>
 </html>

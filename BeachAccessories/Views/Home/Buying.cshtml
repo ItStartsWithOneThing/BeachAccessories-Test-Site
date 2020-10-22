@@ -1,0 +1,128 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/ForBuying.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Детали заказа</title>
+</head>
+<body>
+    <div class="upper-body">
+        <div class="all-content">
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="~/Home/Index"><span></span><span></span><span>Главная</span></a></li>
+                    <li>
+                        <a href="#"><span></span><span></span><span>Категории</span></a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="~/Home/Category/Towels"><span></span><span></span><span>Полотенца</span></a></li>
+                                <li><a href="~/Home/Category/Hats"><span></span><span></span><span>Шляпы</span></a></li>
+                                <li><a href="~/Home/Category/Umbrellas"><span></span><span></span><span>Зонты</span></a></li>
+                                <li><a href="~/Home/Category/Mats"><span></span><span></span><span>Коврики</span></a></li>
+                                <li><a href="~/Home/Category/Mattresses"><span></span><span></span><span>Матрасы</span></a></li>
+                                <li><a href="~/Home/Category/Rings"><span></span><span></span><span>Круги</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="~/Home/About"><span></span><span></span><span>О Нас</span></a></li>
+                    <li><a href="~/Home/Contact"><span></span><span></span><span>Контакты</span></a></li>
+                </ul>
+                <ul class="search">
+                    <li><input type="text" name="search" /></li>
+                    <li><input type="submit" value="Поиск" /></li>
+                </ul>
+            </nav>
+            <div class="main">
+
+                <div class="main-upper">
+                    <h3>Детали заказа</h3>
+                </div>
+
+                <div class="main-lower">
+                    <div class="left-side">
+                        <form method="post" autocomplete="off">
+                            <input type="hidden" name="ProductId" value="@ViewBag.Product.Id"/>
+                            <input type="hidden" name="ProductCategory" value="@ViewBag.Category"/>
+                            <input type="hidden" name="ProductPrice" value="@ViewBag.Product.Price"/>
+                            <input type="hidden" name="ProductName" value="@ViewBag.Product.Name"/>
+                            <label class="form-item" for="PersonFirstName">Имя *</label>
+                            <input class="form-item input-item" type="text" name="PersonFirstName" id="firstname" required />
+
+                            <label class="form-item" for="PersonLastName">Фамилия *</label>
+                            <input class="form-item input-item" type="text" name="PersonLastName" id="lastname" required />
+
+                            <label class="form-item" for="PhoneNumber">Телефон *</label>
+                            <input class="form-item input-item" type="text" placeholder="+38(0XX)XXX-XX-XX" pattern="\+\d{12}" id="phone" name="PhoneNumber" required />
+
+                            <label class="form-item" for="EmailAdress">Email *</label>
+                            <input class="form-item input-item" type="email" placeholder="user@gmail.com" id="email" name="EmailAdress" required />
+
+                            <label class="form-item" for="NewPostNumber">№ Отделения Новой Почты *</label>
+                            <input class="form-item input-item" type="text" name="NewPostNumber" id="NewPost" required />
+
+                            <label class="form-item" for="Comment">Комментарий </label>
+                            <textarea class="form-item input-item" name="Comment" id="comment"></textarea>
+
+                            <div class="button-container">
+                                <button class="form-item " type="submit"><span></span><span></span><span>Оформить заказ</span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="right-side">
+                        <div class="order-price">
+                            <div class="upper-order-price">
+                                <h2>Сумма заказа</h2>
+                                <div class="delivery-price">
+                                    <span>Доставка</span>
+                                    <span>Бесплатно</span>
+                                </div>
+                                <div class="items-price">
+                                    <span>Итого</span>
+                                    <span>@ViewBag.Product.Price грн.</span>
+                                </div>
+                            </div>
+                            <div class="lower-order-price">
+                                <span>Всего</span>
+                                <span>@ViewBag.Product.Price грн.</span>
+                            </div>
+                        </div>
+
+                        <div class="all-items">
+                            <h2>Ваши товары </h2>
+                            <div class="all-items-middle">
+                                <div class="all-items-middle-left">
+                                    <image src="drift.jpg" width="200px" />
+                                </div>
+                                <div class="all-items-middle-right">
+                                    <span>@ViewBag.Product.Name</span>
+                                </div>
+                            </div>
+                            <div class="all-items-lower">
+                                <span>Количество</span>
+                                <span><input type="number" step="1" min="1" max="20" id="amount" name="amount" value="1" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="empty-left"></div>
+        <div class="empty-right"></div>
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Not creative company</p>
+    </footer>
+</body>
+</html>

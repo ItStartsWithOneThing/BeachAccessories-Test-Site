@@ -1,16 +1,84 @@
 ﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-<h2>@ViewBag.Title</h2>
-<p>Images Of Product</p>
-<p>@ViewBag.Product.Name</p>
-<p>@ViewBag.Product.Price</p>
-<p>@ViewBag.Product.Color</p>
-<p>Добавить к моделям характеристики</p>
-<form method="get" action="~/Home/buy">
-    <input type="hidden" name="Id" value="@ViewBag.Product.Id" />
-    <input type="hidden" name="Name" value="@ViewBag.Category" />
-    <input type="submit" value="Купить" />
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/ForDiscription.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Item Name</title>
+</head>
+<body>
+    <div class="upper-body">
+        <div class="all-content">
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="~/Home/Index"><span></span><span></span><span>Главная</span></a></li>
+                    <li>
+                        <a href="#"><span></span><span></span><span>Категории</span></a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="~/Home/Category/Towels"><span></span><span></span><span>Полотенца</span></a></li>
+                                <li><a href="~/Home/Category/Hats"><span></span><span></span><span>Шляпы</span></a></li>
+                                <li><a href="~/Home/Category/Umbrellas"><span></span><span></span><span>Зонты</span></a></li>
+                                <li><a href="~/Home/Category/Mats"><span></span><span></span><span>Коврики</span></a></li>
+                                <li><a href="~/Home/Category/Mattresses"><span></span><span></span><span>Матрасы</span></a></li>
+                                <li><a href="~/Home/Category/Rings"><span></span><span></span><span>Круги</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="~/Home/About"><span></span><span></span><span>О Нас</span></a></li>
+                    <li><a href="~/Home/Contact"><span></span><span></span><span>Контакты</span></a></li>
+                </ul>
+                <ul class="search">
+                    <li><input type="text" name="search" /></li>
+                    <li><input type="submit" value="Поиск" /></li>
+                </ul>
+            </nav>
+            <div class="main">
+                <div class="left-bar">
+                    <div class="promotion">
+                        <span class="promotion-word">На этой неделе : </br> 3</br> По Цене</br> 2</br></br><span class="arrow"> &darr;</span></span>
+                    </div>
+                    <div class="categories">
+                        <span class="category-word number1"><a href="~/Home/Category/Towels">Полотенца</a></span>
+                        <span class="category-word number2"><a href="~/Home/Category/Hats">Шляпы</a></span>
+                        <span class="category-word number2"><a href="~/Home/Category/Umbrellas">Зонты</a></span>
+                        <span class="category-word number3"><a href="~/Home/Category/Mats">Коврики</a></span>
+                        <span class="category-word number4"><a href="~/Home/Category/Mattresses">Матрасы</a></span>
+                        <span class="category-word number5"><a href="~/Home/Category/Rings">Круги</a></span>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="right-content-first">
+                        <div class="name">
+                            <span>@ViewBag.Product.Name</span>
+                        </div>
+                        <div class="price">
+                            <span>@ViewBag.Product.Price грн.</span>
+                            <a href="#"><span></span><span></span><span>Купить</span></a>
+                        </div>
+                    </div>
+                    <div class="right-content-last">
+                        <a title="@ViewBag.Product.Name" href="#"><img src="Accordion/hat.jpg" alt="@ViewBag.Product.Name" /></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="empty-left"></div>
+        <div class="empty-right"></div>
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Not creative company</p>
+    </footer>
+</body>
+</html>

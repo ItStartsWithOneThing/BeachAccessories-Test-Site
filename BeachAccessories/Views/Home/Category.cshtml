@@ -1,7 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
     Layout = null;
-
 }
 
 <!DOCTYPE html>
@@ -10,11 +8,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="~/Content/ForIndex.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/ForCategory.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <title>Главная</title>
+    <title>@ViewBag.Title</title>
 </head>
 <body>
     <div class="upper-body">
@@ -58,26 +56,37 @@
                     </div>
                 </div>
                 <div class="right-content">
-                    <h2>Site.com - Всё для хорошего отдыха</h2>
-                    <p>
-                        Широкий ассортимент товаров позволяет найти то, что вам нужно по демократичной цене.
-                        Наш магазин сотрудничает с именитыми брендами, ведущими строгий контроль качества, что
-                        позволит вам быть уверенным в надежности приобретаемого товара.
-                    </p>
-                    <div class="slider">
-                        <div class="slide-1 item"><span><a href="~/Home/Category/Hats">Шляпы</a></span></div>
-                        <div class="slide-2 item"><span><a href="~/Home/Category/Mats">Коврики</a></span></div>
-                        <div class="slide-3 item"><span><a href="~/Home/Category/Mattresses">Матрасы</a></span></div>
-                        <div class="slide-4 item"><span><a href="~/Home/Category/Rings">Круги</a></span></div>
-                        <div class="slide-5 item"><span><a href="~/Home/Category/Towels">Полотенца</a></span></div>
-                        <div class="slide-6 item"><span><a href="~/Home/Category/Umbrellas">Зонтики</a></span></div>
+                    <div class="products">
+                        @foreach(var product in ViewBag.Products)
+                        {
+                            <div class="produtc-item">
+                                <div class="item-image">
+                                    <a title="@product.Name" href="~/Home/Description/@product.Id/@ViewBag.Category"><img src="~/Content/Images/street.jpg" alt="@product.Name" /></a>
+                                </div>
+                                <div class="item-description">
+
+                                    <div class="item-name">
+                                        <h4>@product.Name</h4>
+                                    </div>
+
+                                    <div class="item-price">
+                                        <span>@product.Price грн</span>
+                                    </div>
+
+                                    <div class="purchase-button">
+                                        <a href="~/Home/Buying/@product.Id/@ViewBag.Category" type="button"><span></span><span></span><span>Купить</span></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
-    <div class="empty-left"></div>
-    <div class="empty-right"></div>
+        <div class="empty-left"></div>
+        <div class="empty-right"></div>
     </div>
     <footer>
         <p>&copy; @DateTime.Now.Year - Not creative company</p>

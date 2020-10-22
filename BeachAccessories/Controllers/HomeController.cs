@@ -32,7 +32,7 @@ namespace BeachAccessories.Controllers
 
 
         [HttpGet]
-        public ActionResult Buy(int? id, string name)
+        public ActionResult Buying(int? id, string name)
         {
             if (id != null && name != null && id is Int32 )
             {
@@ -40,31 +40,37 @@ namespace BeachAccessories.Controllers
                 if (name == "Коврики")
                 {
                     ViewBag.Product = db.Mats.Find(id);
+                    ViewBag.Category = name;
                     return View();
                 }
                 else if (name == "Зонты")
                 {
                     ViewBag.Product = db.Umbrellas.Find(id);
+                    ViewBag.Category = name;
                     return View();
                 }
                 else if (name == "Полотенца")
                 {
                     ViewBag.Product = db.Towels.Find(id);
+                    ViewBag.Category = name;
                     return View();
                 }
                 else if (name == "Шляпы")
                 {
                     ViewBag.Product = db.Hats.Find(id);
+                    ViewBag.Category = name;
                     return View();
                 }
                 else if (name == "Матрасы")
                 {
                     ViewBag.Product = db.Mattresses.Find(id);
+                    ViewBag.Category = name;
                     return View();
                 }
                 else if (name == "Круги")
                 {
                     ViewBag.Product = db.Rings.Find(id);
+                    ViewBag.Category = name;
                     return View();
                 }
             }
@@ -73,31 +79,33 @@ namespace BeachAccessories.Controllers
 
 
         [HttpPost]
-        public ActionResult Buy(Purchase purchase)
+        public ActionResult Buying(Purchase purchase)
         {
             if (purchase.ProductId != null && purchase.ProductCategory != null && purchase.ProductPrice != null &&
-                purchase.ProductName != null && purchase.PersonName != null && purchase.EmailAdress != null &&
-                purchase.PhoneNumber != null)
+                purchase.ProductName != null && purchase.PersonFirstName != null && purchase.EmailAdress != null &&
+                purchase.PhoneNumber != null && purchase.PersonLastName != null && purchase.NewPostNumber != null)
             {
                 purchase.Date = DateTime.Now;
+                if(purchase.Comment != null)
+                { purchase.Comment = "Без комментария."; }
                 db.Purchases.Add(purchase);
                 db.SaveChanges();
                 var deal = db.Purchases.Find(purchase.ProductId);
                 ViewBag.Deal = deal;
-                return View("Congrats");
+                return View("Congratulation");
             }
             return RedirectToAction("Index");
         }
 
         
-        public ActionResult Categories(string id)
+        public ActionResult Category(string id)
         {
             if(id == "Rings")
             {
                 IEnumerable<Ring> Rings = db.Rings;
                 ViewBag.Products = Rings;
                 ViewBag.Category = "Круги";
-                ViewBag.Title = "Круги";
+                ViewBag.Title = "Надувные Круги";
                 return View();
             }
             else if (id == "Hats")
@@ -121,7 +129,7 @@ namespace BeachAccessories.Controllers
                 IEnumerable<Mattress> Mattresses = db.Mattresses;
                 ViewBag.Products = Mattresses;
                 ViewBag.Category = "Матрасы";
-                ViewBag.Title = "Матрасы";
+                ViewBag.Title = "Надувные Матрасы";
                 return View();
             }
             else if (id == "Umbrellas")
@@ -129,7 +137,7 @@ namespace BeachAccessories.Controllers
                 IEnumerable<Umbrella> Umbrellas = db.Umbrellas;
                 ViewBag.Products = Umbrellas;
                 ViewBag.Category = "Зонты";
-                ViewBag.Title = "Зонты";
+                ViewBag.Title = "Пляжные Зонты";
                 return View();
             }
             else if (id == "Towels")

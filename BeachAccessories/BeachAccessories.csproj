@@ -147,6 +147,19 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ForAbout.css" />
+    <Content Include="Content\ForCategory.css" />
+    <Content Include="Content\ForContact.css" />
+    <Content Include="Content\ForIndex.css" />
+    <Content Include="Content\ForDiscription.css" />
+    <Content Include="Content\ForBuying.css" />
+    <Content Include="Content\Images\Index\hat.jpg" />
+    <Content Include="Content\Images\Index\Mat.jpg" />
+    <Content Include="Content\Images\Index\mattras.jpg" />
+    <Content Include="Content\Images\Index\ring.jpg" />
+    <Content Include="Content\Images\Index\towel.jpg" />
+    <Content Include="Content\Images\Index\umbrella.jpg" />
+    <Content Include="Content\Images\street.jpg" />
     <Content Include="Content\StyleLayout.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -154,6 +167,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\Caveat-Bold.ttf" />
+    <Content Include="fonts\Caveat-Regular.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -179,10 +194,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Some\Congratulations.cshtml" />
-    <Content Include="Views\Home\Categories.cshtml" />
-    <Content Include="Views\Home\Buy.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Home\Buying.cshtml" />
     <Content Include="Views\Home\Description.cshtml" />
-    <Content Include="Views\Home\Congrats.cshtml" />
+    <Content Include="Views\Home\Congratulation.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

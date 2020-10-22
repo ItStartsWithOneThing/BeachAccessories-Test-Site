@@ -1,7 +1,84 @@
 ﻿@{
     ViewBag.Title = "About";
+    Layout = null;
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/ForAbout.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>О Нас</title>
+</head>
+<body>
+    <div class="upper-body">
+        <div class="all-content">
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="~/Home/Index"><span></span><span></span><span>Главная</span></a></li>
+                    <li>
+                        <a href="#"><span></span><span></span><span>Категории</span></a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="~/Home/Category/Towels"><span></span><span></span><span>Полотенца</span></a></li>
+                                <li><a href="~/Home/Category/Hats"><span></span><span></span><span>Шляпы</span></a></li>
+                                <li><a href="~/Home/Category/Umbrellas"><span></span><span></span><span>Зонты</span></a></li>
+                                <li><a href="~/Home/Category/Mats"><span></span><span></span><span>Коврики</span></a></li>
+                                <li><a href="~/Home/Category/Mattresses"><span></span><span></span><span>Матрасы</span></a></li>
+                                <li><a href="~/Home/Category/Rings"><span></span><span></span><span>Круги</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="~/Home/About"><span></span><span></span><span>О Нас</span></a></li>
+                    <li><a href="~/Home/Contact"><span></span><span></span><span>Контакты</span></a></li>
+                </ul>
+                <ul class="search">
+                    <li><input type="text" name="search" /></li>
+                    <li><input type="submit" value="Поиск" /></li>
+                </ul>
+            </nav>
+            <div class="main">
+                <div class="left-bar">
+                    <div class="promotion">
+                        <span class="promotion-word">На этой неделе : </br> 3</br> По Цене</br> 2</br></br><span class="arrow"> &darr;</span></span>
+                    </div>
+                    <div class="categories">
+                        <span class="category-word number1"><a href="~/Home/Category/Towels">Полотенца</a></span>
+                        <span class="category-word number2"><a href="~/Home/Category/Hats">Шляпы</a></span>
+                        <span class="category-word number2"><a href="~/Home/Category/Umbrellas">Зонты</a></span>
+                        <span class="category-word number3"><a href="~/Home/Category/Mats">Коврики</a></span>
+                        <span class="category-word number4"><a href="~/Home/Category/Mattresses">Матрасы</a></span>
+                        <span class="category-word number5"><a href="~/Home/Category/Rings">Круги</a></span>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <h2>О магазине</h2>
+                    <p>Интернет-магазин Site.com предлагает всем жителям Украины оригинальную продукцию таких именитых брэндов, как "Seafolly", "Marc & Andre", "Sport Line" и другие.</p>
+                    <p>Надувные матрасы, надувные круги, пляжные полотенца и многие другие аксессуары Вы можете приобрести в online-режиме круглосуточно в нашем интернет-магазине.</p>
+                    </br>
+                    <p>Так же заказы можно осуществлять в телефонном режиме с 10:00 до 20:00.</p>
+                    <p>(093) 937-99-92</p>
+                    <p>(066) 322-14-88</p>
+                    </br>
+                    <p>Выдача товаров происходит в offline-магазине.</p>
+                    <p>Так же можно воспользоваться доставкой через Новую Почту или УкрПочту.</p>
+                    </br>
+                    <h4>Адрес магазина:</h4>
+                    <p>ЦУМ, 2 Этаж</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="empty-left"></div>
+        <div class="empty-right"></div>
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Not creative company</p>
+    </footer>
+</body>
+</html>
